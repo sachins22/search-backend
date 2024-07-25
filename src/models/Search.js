@@ -1,13 +1,16 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-    image: {
+    images: {
         type: String,
         required: true
     },
     name: {
         type: String,
         required: true,
+        lowercase: true,
+        trim: true, 
+        
     },
     age:{
         type: Number,

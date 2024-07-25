@@ -10,7 +10,7 @@ import user from "./routes/Search.routes.js";
 
 app.use("/api",user)
 
-
+console.log(`http://localhost:${process.env.PORT}/api/create`)
 app.get("/get",(req,res)=>{
     return res.send(`ss22`)
 })

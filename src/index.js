@@ -6,18 +6,12 @@ import  dotenv  from "dotenv";
 dotenv.config({
     path: './env'
 })
-const Port = 1901;
 
-connectDB()
-.then(
-    app.listen(Port,()=>{
-        console.log(`\n ⚙️  App is listening on port ${Port}`)
-    })
-)
-.catch ((error) => {
-    console.log("MONGODB connection FAILED : ", error);
+app.listen(process.env.PORT ,process.env.HOST , ()=> {
+    connectDB();
+    console.log(`\n ⚙️  App is listening on port http://${process.env.HOST}:${process.env.PORT}`)
+    console.log(`http://localhost:${process.env.PORT}/api/create`)
 })
-
 
 
 
